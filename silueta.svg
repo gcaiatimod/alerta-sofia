@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Silueta de persona buscada (foto no disponible)">
+  <rect width="400" height="500" fill="#F2F5FA"/>
+  <circle cx="200" cy="115" r="68" fill="#B7CBE3"/>
+  <path d="M200 205 C105 205 78 295 78 380 L78 500 L322 500 L322 380 C322 295 295 205 200 205 Z" fill="#B7CBE3"/>
+  <path d="M78 500 L78 416 C78 416 130 452 200 452 C270 452 322 416 322 416 L322 500 Z" fill="#A9C0DC" opacity="0.6"/>
+</svg>

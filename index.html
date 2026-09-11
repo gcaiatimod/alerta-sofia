@@ -5,11 +5,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alerta Sofía | Ministerio de Seguridad Nacional | Argentina.gob.ar</title>
-    <meta name="description"
-        content="Programa de alerta de emergencia ante casos de niños, niñas o adolescentes desaparecidos en grave peligro. Sistema Federal de Búsqueda de Personas Desaparecidas y Extraviadas (SIFEBU) - Ministerio de Seguridad Nacional.">
+    <title>Alerta Sofía: buscamos a Juan Pérez</title>
+    <meta name="description" content="Si tenés información, llamá al 134.">
     <link rel="shortcut icon"
         href="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico">
+
+    <!-- ============================================================
+         METADATOS — ESTADO "ALERTA SOFÍA ACTIVA" (mockup)
+         Campos levantados del contenido PERSONA BUSCADA:
+         Nombre: Juan | Apellido: Pérez | Imagen: silueta.svg
+         ============================================================ -->
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Alerta Sofía: buscamos a Juan Pérez">
+    <meta property="og:description" content="Si tenés información, llamá al 134.">
+    <meta property="og:image" content="mateo-benitez.png">
+    <meta property="og:image:url" content="mateo-benitez.png">
+    <meta property="og:image:alt" content="Silueta de Juan Pérez">
+    <meta property="og:url" content="https://www.argentina.gob.ar/seguridad/alertasofia">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Argentina.gob.ar">
+    <meta property="profile:first_name" content="Juan">
+    <meta property="profile:last_name" content="Pérez">
+
+    <!-- Schema.org: Person -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Juan Pérez",
+            "givenName": "Juan",
+            "familyName": "Pérez",
+            "image": "mateo-benitez.png",
+            "description": "Si tenés información, llamá al 134."
+        }
+    </script>
 
     <!-- Nav and address bar color -->
     <meta name="theme-color" content="#242C4F">
@@ -274,6 +305,16 @@
                 font-size: 16px;
                 font-weight: 600;
             }
+
+            /* Ficha persona buscada: imagen en versión móvil */
+            .missingperson__img-container img {
+                min-height: 260px;
+                max-height: 400px;
+            }
+
+            #encabezado h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -345,531 +386,139 @@
         <span id="main-content"></span>
 
         <!-- Encabezado Alerta Sofía -->
-        <div class="panel-pane pane-encabezados">
-            <div class="pane-content">
-                <div class="jumbotron">
-                    <div class="jumbotron_bar">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <ol class="breadcrumb device-breadcrumb" role="list" aria-label="Migas de pan">
-                                        <li class="device-breadcrumb__hidden-item"><a
-                                                href="https://www.argentina.gob.ar/"><span
-                                                    itemprop="name">Inicio</span></a></li>
-                                        <li class="device-breadcrumb__last-visible-item"><a
-                                                href="https://www.argentina.gob.ar/seguridad"><span
-                                                    itemprop="name">Ministerio de Seguridad Nacional</span></a></li>
-                                        <li class="active device-breadcrumb__hidden-item" aria-current="page">
-                                            <span>Alerta Sofía</span>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="encabezado">
-                    <div class="bg-arg-azul container-fluid p-y-2">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-9 col-xs-12 col-sm-12">
-                                    <h1><img alt="Alerta Sofía"
-                                            src="https://www.argentina.gob.ar/sites/default/files/styles/isologo/public/imagenEncabezado/alerta-sofia-logo.png?itok=ybB35c65"
-                                            class="img-responsive logo"></h1>
-                                    <p>Si tenés información sobre una persona buscada en Alerta Sofía, comunicate de
-                                        inmediato a la <b>Línea 134</b>.</p>
-                                </div>
-                            </div>
+        <div id="encabezado">
+            <div class="bg-arg-azul container-fluid p-y-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-t-0 m-b-1" style="display:inline-block;"><img alt="Alerta Sofía"
+                                    src="https://www.argentina.gob.ar/sites/default/files/styles/isologo/public/imagenEncabezado/alerta-sofia-logo.png?itok=ybB35c65"
+                                    class="img-responsive logo"></h1>
+                            <p class="font-sans-serif text-white m-b-0 h5" style="font-weight: 400;">Si tenés
+                                información llamá al <b>134</b>.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN OPCIÓN 1: VISTA HERO CON ESTILOS PERSONALIZADOS -->
-        <section class="m-t-3 m-b-0">
-            <div class="container">
-                <div class="alert alert-info font-sans-serif m-b-2">
-                    <p class="m-b-0"><b>OPCIÓN 1:</b> Ficha destacada con estilos personalizados CSS
-                        (`.alerta-sofia-hero`)</p>
-                </div>
-
-                <!-- FICHA DE CASO PRINCIPAL NATIVA -->
-                <article class="alerta-sofia-hero" itemscope="" itemtype="https://schema.org/Person">
-
-                    <div class="alerta-sofia-hero__header d-flex align-items-center as-between bg-rojo">
-                        <h2 class="m-0 fw-extra-bold text-white text-uppercase"><i class="fa fa-bell"></i> Alerta Sofía
-                            Nacional Activa</h2>
-                        <span class="label bg-white text-danger" style="font-size:12px; font-weight:800;">ALTO RIESGO
-                            INMINENTE</span>
-                    </div>
-
-                    <div class="alerta-sofia-hero__body">
-                        <!-- CASO 1 (Predeterminado) -->
-                        <div class="hero-caso">
-                            <div id="caso-1-content" class="row">
-                                <!-- Columna Foto -->
-                                <div class="col-md-5 col-sm-6">
-                                    <div
-                                        class="alerta-sofia-img-box d-flex align-items-center justify-content-center bg-negro">
-                                        <div class="img-blur-bg" style="background-image: url('mateo-benitez.png');">
-                                        </div>
-                                        <img src="mateo-benitez.png" alt="Fotografía de la persona buscada"
-                                            class="img-person" itemprop="image">
-                                    </div>
-                                </div>
-
-                                <!-- Columna Información Ficha -->
-                                <div class="col-md-7 col-sm-6">
-                                    <div class="buscamos-label text-white text-uppercase fw-black m-t-0 m-b-05">Buscamos
-                                        a:
-                                    </div>
-                                    <h1 class="persona-nombre text-white text-uppercase fw-black m-t-05 m-b-2"
-                                        itemprop="name">MATEO GABRIEL BENÍTEZ</h1>
-
-                                    <dl class="dl-horizontal datos-lista m-b-2 text-white">
-                                        <dt><i class="fa fa-calendar"></i> Edad:</dt>
-                                        <dd>4 años.</dd>
-
-                                        <dt><i class="fa fa-map-marker"></i> Lugar de desaparición:</dt>
-                                        <dd>Barrio San José Obrero, de la ciudad de Cosquín, Córdoba.</dd>
-
-                                        <dt><i class="fa fa-clock-o"></i> Fecha de desaparición:</dt>
-                                        <dd>18/03/2026.</dd>
-
-                                        <dt><i class="fa fa-user"></i> Descripción física:</dt>
-                                        <dd>Contextura física delgada, tez blanca, cabello castaño claro largo y
-                                            ondulado a
-                                            la altura de los hombros; ojos marrones, de 95 cm de altura aproximadamente.
-                                        </dd>
-                                    </dl>
-
-                                    <!-- Bloque Llamar al 134 -->
-
-
-                                    <!-- <div class="institutional-tag">
-                                    <span><i class="fa fa-shield"></i> <b>Ministerio de Seguridad Nacional</b></span>
-                                    <span>•</span>
-                                    <span><b>SIFEBU</b> (Sistema Federal de Búsqueda de Personas Desaparecidas y
-                                        Extraviadas)</span>
-                                </div> -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CASO 2 (Para demostrar la excepción de múltiples casos) -->
-                        <div class="hero-caso">
-                            <div id="caso-2-content" class="row">
-                                <div class="col-md-5 col-sm-6">
-                                    <div
-                                        class="alerta-sofia-img-box d-flex align-items-center justify-content-center bg-negro">
-                                        <div class="img-blur-bg" style="background-image: url('sofia-rodriguez.png');">
-                                        </div>
-                                        <img src="sofia-rodriguez.png" alt="Fotografía de la persona buscada"
-                                            class="img-person" itemprop="image">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-7 col-sm-6">
-                                    <div class="buscamos-label text-white text-uppercase fw-black m-t-0 m-b-05">Buscamos
-                                        a:
-                                    </div>
-                                    <h1 class="persona-nombre text-white text-uppercase fw-black m-t-05 m-b-2"
-                                        itemprop="name">SOFÍA VALENTINA RODRÍGUEZ</h1>
-
-                                    <dl class="dl-horizontal datos-lista m-b-2 text-white">
-                                        <dt><i class="fa fa-calendar"></i> Edad:</dt>
-                                        <dd>5 años.</dd>
-
-                                        <dt><i class="fa fa-map-marker"></i> Lugar de desaparición:</dt>
-                                        <dd>San Luis, Provincia de San Luis.</dd>
-
-                                        <dt><i class="fa fa-clock-o"></i> Fecha de desaparición:</dt>
-                                        <dd>14/06/2025.</dd>
-
-                                        <dt><i class="fa fa-user"></i> Descripción física:</dt>
-                                        <dd>Tez trigueña, cabello castaño oscuro lacio, ojos oscuros, 1.05m de altura
-                                            aproximadamente.</dd>
-                                    </dl>
-
-                                    <!-- <div class="cta-134-box">
-                                    <div class="cta-text">
-                                        Para aportar información<br><span
-                                            style="color:#C62828; font-size:13px;">Confidencial y Gratuito</span>
-                                    </div>
-                                    <a href="tel:134" class="cta-number" title="Llamar al 134">
-<i class="fa fa-phone bg-rojo text-white"></i> LLAMAR 134
-                                    </a>
-                                </div> -->
-
-                                    <!-- <div class="institutional-tag">
-                                    <span><i class="fa fa-shield"></i> <b>Ministerio de Seguridad Nacional</b></span>
-                                    <span>•</span>
-                                    <span><b>SIFEBU</b></span>
-                                </div> -->
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="cta-134-box bg-white text-primary m-t-1">
-                        <div class="cta-text text-uppercase fw-extra-bold">
-                            Para aportar información<br><span class="text-danger" style="font-size:13px;">Confidencial y
-                                Gratuito</span>
-                        </div>
-                        <a href="tel:134" class="cta-number" title="Llamar al 134">
-                            <i class="fa fa-phone bg-rojo text-white"></i> LLAMAR 134
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-
-        <!-- SECCIÓN OPCIÓN 2: USANDO EXCLUSIVAMENTE CLASES NATIVAS DEL TEMPLATE (PONCHO / BOOTSTRAP) -->
-        <section class="m-t-4 m-b-4" style="display: none;">
-            <div class="container">
-                <div class="alert alert-warning font-sans-serif m-b-2">
-                    <p class="m-b-0"><b>OPCIÓN 2:</b> Boceto utilizando <u>únicamente clases estándar del template
-                            (Poncho / Bootstrap)</u> sin ningún estilo CSS propio agregado.</p>
-                </div>
-
-                <!-- Panel Estándar Poncho / Bootstrap -->
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h3 class="panel-title font-sans-serif text-uppercase p-y-05">
-                            <i class="fa fa-bullhorn"></i> ALERTA SOFÍA NACIONAL ACTIVA — BUSCAMOS A:
-                            <span class="label label-default pull-right hidden-xs">ALTO RIESGO INMINENTE</span>
-                        </h3>
-                    </div>
-                    <div class="panel-body p-3">
-                        <div class="row">
-                            <!-- Foto con clase thumbnail nativa -->
-                            <div class="col-md-4 col-sm-5 text-center m-b-2">
-                                <div class="thumbnail p-1 m-b-0">
-                                    <img src="mateo-benitez.png" alt="Fotografía de Mateo Gabriel Benítez"
-                                        class="img-responsive img-rounded">
-                                </div>
-                            </div>
-
-                            <!-- Datos con componentes y utilidades Poncho -->
-                            <div class="col-md-8 col-sm-7">
-                                <span class="label label-danger font-sans-serif m-b-1"
-                                    style="display:inline-block;">BUSCAMOS A</span>
-                                <h2 class="h1 text-primary font-sans-serif m-t-0 m-b-2">MATEO GABRIEL BENÍTEZ</h2>
-
-                                <div class="well bg-gray p-2 m-b-2">
-                                    <p class="m-b-1"><b><i class="fa fa-calendar text-muted"></i> Edad:</b> 4 años.</p>
-                                    <p class="m-b-1"><b><i class="fa fa-map-marker text-muted"></i> Lugar de
-                                            desaparición:</b> Barrio San José Obrero, de la ciudad de Cosquín, Córdoba.
-                                    </p>
-                                    <p class="m-b-1"><b><i class="fa fa-clock-o text-muted"></i> Fecha de
-                                            desaparición:</b> 18/03/2026.</p>
-                                    <p class="m-b-0"><b><i class="fa fa-user text-muted"></i> Descripción física:</b>
-                                        Contextura física delgada, tez blanca, cabello castaño claro largo y ondulado a
-                                        la altura de los hombros; ojos marrones, de 95 cm de altura aproximadamente.</p>
-                                </div>
-
-                                <!-- Cuadro de Acción de Llamada 134 en formato Poncho -->
-                                <div class="panel panel-default m-b-2">
-                                    <div class="panel-body bg-arg-gris-niebla p-2">
-                                        <div class="row">
-                                            <div class="col-sm-7 col-xs-12 m-b-1">
-                                                <p class="h4 font-sans-serif text-danger m-t-0 m-b-05"><b>PARA APORTAR
-                                                        INFORMACIÓN:</b></p>
-                                                <p class="small text-muted m-b-0">Llamada gratuita y confidencial
-                                                    disponible 24/7 desde todo el país.</p>
-                                            </div>
-                                            <div class="col-sm-5 col-xs-12 text-right text-left-xs">
-                                                <a href="tel:134"
-                                                    class="btn btn-danger btn-lg btn-block font-sans-serif">
-                                                    <i class="fa fa-phone" aria-hidden="true"></i> <b>LLAMAR AL 134</b>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p class="small text-muted m-b-0">
-                                    <i class="fa fa-shield"></i> <b>Ministerio de Seguridad Nacional</b> — <b>SIFEBU</b>
-                                    (Sistema Federal de Búsqueda de Personas Desaparecidas y Extraviadas)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- SECCIÓN OPCIÓN 3: ALGO INTERMEDIO (EQUILIBRIO ENTRE OPCIÓN 1 Y OPCIÓN 2) -->
+        <!-- PERSONA BUSCADA — contenido activado por Alerta Sofía -->
         <section class="m-t-0 m-b-4">
             <div class="container">
-                <div class="alert alert-success font-sans-serif m-b-2">
-                    <p class="m-b-0"><b>Opción 2:</b> Ficha + panel, bloque 134 y firma institucional.</p>
-                </div>
-
                 <article class="card-alerta-intermedio panel panel-default m-b-0" itemscope=""
                     itemtype="https://schema.org/Person">
-                    <div class="panel-heading bg-white">
-                        <div class="row display-flex align-items-center"
-                            style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:0;">
-                            <div>
-                                <span class="label label-danger font-sans-serif p-x-1 p-y-05"
-                                    style="font-size:12px;">ALERTA SOFÍA
-                                    ACTIVA</span>
-                                <span class="text-muted small m-l-1 hidden-xs"><i class="fa fa-shield text-primary"></i>
-                                    Ministerio de Seguridad Nacional — SIFEBU</span>
-                            </div>
-                            <div class="hidden-xs">
-                                <span class="label label-default font-sans-serif"
-                                    style="font-size:11px; background:#E3E7ED; color:#444444;">ALTO RIESGO
-                                    INMINENTE</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="panel-body">
                         <div class="caso-bloque">
+                            <!-- Fila título: 12 columnas -->
                             <div class="row">
-                                <!-- Columna Foto -->
+                                <div class="col-md-12">
+                                    <h2 class="h1 font-sans-serif fw-bold text-primary m-t-0 m-b-1" itemprop="name">
+                                        Buscamos a Juan Pérez</h2>
+                                    <meta itemprop="givenName" content="Juan">
+                                    <meta itemprop="familyName" content="Pérez">
+                                </div>
+                            </div>
+
+                            <!-- Fila contenido: imagen + resumen de historia -->
+                            <div class="row">
+                                <!-- Columna Imagen -->
                                 <div class="col-md-5 col-sm-5 m-b-2">
-                                    <div class="missingperson__img-container"
-                                        style="border-radius:6px; min-height:360px; border:1px solid #C8D0DA;">
-                                        <div class="img-blur" style="background-image: url('mateo-benitez.png');"></div>
-                                        <div class="img-visible" style="background-image: url('mateo-benitez.png');">
-                                        </div>
-                                    </div>
+                                    <figure class="missingperson__img-container"
+                                        style="border-radius:6px; min-height:360px; border:1px solid #C8D0DA; margin:0;"
+                                        itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+                                        <img src="mateo-benitez.png" alt="Foto de Juan Pérez" itemprop="contentUrl"
+                                            class="img-responsive"
+                                            style="width:100%; height:100%; min-height:360px; object-fit:cover; border-radius:5px;">
+                                    </figure>
                                 </div>
 
-                                <!-- Columna Datos -->
+                                <!-- Columna Resumen de su historia -->
                                 <div class="col-md-7 col-sm-7">
-                                    <span class="font-sans-serif fw-bold text-uppercase text-danger"
-                                        style="letter-spacing:1px; font-size:14px; display:block;">BUSCAMOS
-                                        A:</span>
-                                    <h2 class="h1 font-sans-serif fw-bold text-primary m-t-0 m-b-2"
-                                        style="font-size:30px;" itemprop="name">MATEO GABRIEL BENÍTEZ</h2>
+                                    <p class="h5 font-sans-serif fw-bold text-uppercase text-primary m-b-1"
+                                        style="letter-spacing:1px;">Información de la persona buscada</p>
 
                                     <div style="border-radius:6px; border-left:4px solid #C62828;"
                                         class="bg-gray m-b-2 p-x-1 p-y-1">
-                                        <p class="m-b-1"><b><i class="fa fa-calendar text-danger"></i>
-                                                Edad:</b> 4 años.</p>
-                                        <p class="m-b-1"><b><i class="fa fa-map-marker text-danger"></i> Lugar
-                                                de desaparición:</b> Barrio San José Obrero, Cosquín, Córdoba.</p>
-                                        <p class="m-b-1"><b><i class="fa fa-clock-o text-danger"></i> Fecha de
-                                                desaparición:</b> 18/03/2026.</p>
-                                        <p class="m-b-0"><b><i class="fa fa-user text-danger"></i> Descripción
-                                                física:</b> Contextura física delgada, tez blanca, cabello castaño claro
-                                            largo y ondulado a la altura de los hombros; ojos marrones, de 95 cm de
-                                            altura
-                                            aproximadamente.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CASO 2 -->
-                        <div class="caso-bloque">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-5 m-b-2">
-                                    <div class="missingperson__img-container"
-                                        style="border-radius:6px; min-height:360px; border:1px solid #C8D0DA;">
-                                        <div class="img-blur" style="background-image: url('sofia-rodriguez.png');">
-                                        </div>
-                                        <div class="img-visible" style="background-image: url('sofia-rodriguez.png');">
+                                        <div class="listas-destacadas danger m-t-1">
+                                            <ul>
+                                                <li>Edad: 12 años</li>
+                                                <li>Lugar: San Justo, La Matanza, Provincia de Buenos Aires</li>
+                                                <li>Fecha de desaparición: 10 de enero de 2026</li>
+                                                <li>Descripción física: contextura delgada, 1,30 metros de estatura,
+                                                    piel clara. Cabello castaño, corto y lacio; ojos marrón oscuro.
+                                                    Presenta una pequeña cicatriz visible en la ceja izquierda. Al
+                                                    momento de su desaparición vestía un pantalón gris y camisa azul.
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col-md-7 col-sm-7">
-                                    <span class="font-sans-serif fw-bold text-uppercase text-danger"
-                                        style="letter-spacing:1px; font-size:14px; display:block;">BUSCAMOS
-                                        A:</span>
-                                    <h2 class="h1 font-sans-serif fw-bold text-primary m-t-0 m-b-2"
-                                        style="font-size:30px;" itemprop="name">SOFÍA VALENTINA RODRÍGUEZ</h2>
-
-                                    <div style="border-radius:6px; border-left:4px solid #C62828;"
-                                        class="bg-gray m-b-2 p-x-1 p-y-1">
-                                        <p class="m-b-1"><b><i class="fa fa-calendar text-danger"></i>
-                                                Edad:</b> 5 años.</p>
-                                        <p class="m-b-1"><b><i class="fa fa-map-marker text-danger"></i> Lugar
-                                                de desaparición:</b> Provincia de San Luis.</p>
-                                        <p class="m-b-1"><b><i class="fa fa-clock-o text-danger"></i> Fecha de
-                                                desaparición:</b> 14/06/2025.</p>
-                                        <p class="m-b-0"><b><i class="fa fa-user text-danger"></i> Descripción
-                                                física:</b> Tez trigueña, cabello castaño oscuro lacio, ojos oscuros,
-                                            de 1.05m de altura aproximadamente.</p>
-                                    </div>
+                                    <p class="font-sans-serif m-b-2">Si tenés información, llamá al
+                                        <b>134</b> o usá
+                                        <a class="btn btn-primary btn-sm"
+                                            href="https://www.argentina.gob.ar/seguridad/formulario-persona-buscada?nombre=Juan+P%C3%A9rez&amp;programas=B%C3%BAsqueda+Buscar"
+                                            target="_blank" rel="noopener noreferrer">nuestro formulario</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Bloque 134 y firma institucional (una sola vez) -->
-                        <div class="call-banner-134" style="margin-top:28px;">
-                            <div class="box-aportar">
-                                PARA APORTAR<br>INFORMACIÓN
-                            </div>
-                            <div>
-                                <a href="tel:134" class="number-call text-primary" title="Llamar gratis al 134">
-                                    LLAMAR <span class="phone-badge bg-rojo text-white"><i
-                                            class="fa fa-phone"></i></span> 134
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- <div class="row m-t-1"
-                            style="display:flex; align-items:center; justify-content:space-between; margin-left:0; margin-right:0;">
-                            <div class="small text-muted">
-                                <i class="fa fa-shield text-primary"></i> <b>Ministerio de Seguridad Nacional</b>
-                            </div>
-                            <div class="small text-muted">
-                                <b>SIFEBU</b> — Sistema Federal de Búsqueda de Personas Desaparecidas
-                            </div>
-                        </div> -->
                     </div>
                 </article>
 
-            </div>
-        </section>
-
-
-        <!-- Bloque de contacto oficial SIFEBU / Ministerio de Seguridad Nacional -->
-        <div class="container m-b-3">
-            <div class="row">
-                <div class="col-md-8 col-md-push-2">
-                    <div class="bg-arg-gris-niebla p-1" style="border-radius:6px;">
-                        <p class="fw-bold h4 m-t-0 m-b-1 text-primary"><i class="fa fa-info-circle"></i> Si tenés datos
-                            o información sobre algún caso de Alerta Sofía:</p>
-                        <ul class="m-b-2 p-l-2 p-b-2 border-bottom">
-                            <li class="m-b-05">Llamá gratis a la <b>Línea 134</b> del Ministerio de Seguridad Nacional a
-                                cualquier hora desde todo el país.</li>
-                            <li class="m-b-05">Comunicate con la <b>Línea 142</b> o al <b>0800-122-2422</b> (Sistema
-                                Federal de Búsqueda de Personas Desaparecidas y Extraviadas - SIFEBU).</li>
-                            <li class="m-b-05">Escribinos al correo electrónico oficial: <b><a
-                                        href="mailto:sifebu@minseg.gob.ar">sifebu@minseg.gob.ar</a></b></li>
+                <!-- Botones de compartir en redes (quedan debajo de la información) -->
+                <div class="section-actions is_area text-center col-md-12 social-share m-t-2">
+                    <p>Compartir en<br> redes sociales</p>
+                    <div class="item-list">
+                        <ul class="list-inline">
+                            <li class="first"><a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
+                                    target="_blank" rel="noopener noreferrer"><span class="sr-only">Compartir en
+                                        Facebook</span><i class="icono-arg-facebook-f-" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/share?url=https://www.argentina.gob.ar/seguridad/alertasofia&amp;text="
+                                    target="_blank"><span class="sr-only">Compartir en Twitter</span><i
+                                        class="icono-arg-twitter-pajaro" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
+                                    target="_blank" rel="noopener noreferrer"><span class="sr-only">Compartir en
+                                        Linkedin</span><i class="icono-arg-linkedin-in" aria-hidden="true"></i></a></li>
+                            <li><a href="https://web.whatsapp.com/send?text=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
+                                    target="_blank" rel="noopener noreferrer" id="linkWA"><span
+                                        class="sr-only">Compartir en Whatsapp</span><i
+                                        class="icono-arg-whatsapp-telefono" aria-hidden="true"></i></a></li>
+                            <li class="last"><a
+                                    href="https://t.me/share/url?url=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
+                                    target="_blank" rel="noopener noreferrer" id="linkTG1"><span
+                                        class="sr-only">Compartir en Telegram</span><i class="icono-arg-telegram-avion"
+                                        aria-hidden="true"></i></a></li>
                         </ul>
-
-                        <p class="text-center m-b-0">
-                            <a href="https://www.argentina.gob.ar/seguridad/sifebu" target="_blank"
-                                class="btn btn-primary">
-                                <i class="fa fa-shield" aria-hidden="true"></i> Conocé más sobre el SIFEBU y el
-                                Ministerio de Seguridad
-                            </a>
-                        </p>
                     </div>
+                </div>
+                <!-- Isologos de programas (134, SIFEBU y Alerta Sofía) -->
+                <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:20px;"
+                    class="col-md-12 text-center m-t-4">
+                    <img alt="Hacé la denuncia anónima al 134" src="denuncias_134.svg" style="height:40px">
+                    <img alt="Búsqueda de personas desaparecidas" src="sifebu.svg" style="height:60px">
+                    <!-- <img alt="Alerta Sofía"
+                        src="https://www.argentina.gob.ar/sites/default/files/styles/isologo/public/imagenEncabezado/alerta-sofia-logo.png?itok=ybB35c65"
+                        style="height:40px"> -->
+                </div>
+
+                <!-- Firmas institucionales -->
+                <div class="col-md-12 text-center small text-muted m-t-2"
+                    style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:20px;">
+                    <span class="font-serif h6 text-primary text-left"><span>Ministerio</span><br> <span>de Capital
+                            Humano</span></span>
+                    <span class="font-serif h6 text-primary text-left"><span>Ministerio</span><br> <span>de Seguridad
+                            Nacional</span></span>
+                    <span style="display:flex; align-items:center; gap:6px;"
+                        class="font-serif h6 text-primary text-left">
+                        <img src="Escudo_nacional_argentino_24.svg.webp" alt="Escudo de la República Argentina"
+                            style="height:55px;">
+                        <span><span>República</span><br> <span>Argentina</span></span>
+                    </span>
                 </div>
             </div>
-        </div>
-
-        <!-- Contenido institucional explicativo sobre Alerta Sofía -->
-        <section>
-            <article class="container content_format">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel-pane pane-redes-sociales">
-                        <div class="pane-content">
-                            <div class="section-actions is_area text-center col-md-12 social-share">
-                                <p>Compartir en<br> redes sociales</p>
-                                <div class="item-list">
-                                    <ul class="list-inline">
-                                        <li class="first"><a
-                                                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
-                                                target="_blank" rel="noopener noreferrer"><span
-                                                    class="sr-only">Compartir en Facebook</span><i
-                                                    class="icono-arg-facebook-f-" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://twitter.com/share?url=https://www.argentina.gob.ar/seguridad/alertasofia&amp;text="
-                                                target="_blank"><span class="sr-only">Compartir en Twitter</span><i
-                                                    class="icono-arg-twitter-pajaro" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
-                                                target="_blank" rel="noopener noreferrer"><span
-                                                    class="sr-only">Compartir en Linkedin</span><i
-                                                    class="icono-arg-linkedin-in" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://web.whatsapp.com/send?text=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
-                                                target="_blank" rel="noopener noreferrer" id="linkWA"><span
-                                                    class="sr-only">Compartir en Whatsapp</span><i
-                                                    class="icono-arg-whatsapp-telefono" aria-hidden="true"></i></a></li>
-                                        <li class="last"><a
-                                                href="https://t.me/share/url?url=https%3A%2F%2Fwww.argentina.gob.ar%2Fseguridad%2Falertasofia"
-                                                target="_blank" rel="noopener noreferrer" id="linkTG1"><span
-                                                    class="sr-only">Compartir en Telegram</span><i
-                                                    class="icono-arg-telegram-avion" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-separator"></div>
-                    <div class="panel-pane pane-entity-field pane-node-body">
-                        <div class="pane-content">
-                            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
-                                <div class="field-items">
-                                    <div class="field-item even" property="content:encoded">
-                                        <p>ALERTA SOFÍA es un sistema de alerta de emergencia rápida desarrollado por el
-                                            Ministerio de Seguridad de la Nación para coordinar la inmediata búsqueda y
-                                            localización de los niños y adolescentes desaparecidos cuyas vidas se
-                                            consideren en “Alto Riesgo Inminente”, mediante el trabajo articulado entre
-                                            las entidades del sector público y el sector privado, los medios de
-                                            comunicación y la sociedad civil.</p>
-                                        <p>Especialmente, implica la difusión masiva y orientada del caso, a través de
-                                            afiches específicos, medios de comunicación, redes sociales, telefonía
-                                            celular, dispositivos de las fuerzas federales, etcétera.</p>
-                                        <p>Para su implementación a nivel internacional, se cuenta con el apoyo de
-                                            Facebook y el Centro Internacional sobre niños desaparecidos y explotados
-                                            (ICMEC).</p>
-                                        <p>La alerta debe solicitarla la autoridad judicial a cargo de la investigación,
-                                            de acuerdo a los requisitos establecidos en el programa:</p>
-                                        <ul>
-                                            <li>que la persona desaparecida sea un niño o adolescente (menor de 18 años
-                                                de edad);</li>
-                                            <li>que exista una denuncia oficial;</li>
-                                            <li>que el caso sea comunicado al SIFEBU;</li>
-                                            <li>que se encuentre en curso una investigación penal que verifique que la
-                                                desaparición se vincula con una privación ilegítima de la libertad y/o
-                                                que haya descartado hipótesis alternativas para localizar de manera
-                                                inmediata al niño o adolescente.</li>
-                                            <li>que el caso sea de “Alto Riesgo Inminente”. Los criterios para la
-                                                determinación de esta situación son: que hayan pasado menos de 72 horas
-                                                de la desaparición; que la persona desaparecida sea discapacitada; que
-                                                haya presencia de adultos relacionados con la desaparición; que se haya
-                                                dado una situación atípica; que se evidencie un contexto de violencia;
-                                                que el niño o adolescente precise medicamentos, entre otros.</li>
-                                            <li>que se cuente con información precisa, suficiente y relevante para
-                                                difundir públicamente la búsqueda, para que la ciudadanía coopere en la
-                                                localización del niño o adolescente desaparecido y/o del/s responsable/s
-                                                de su desaparición.</li>
-                                            <li>que la difusión pública de la información relacionada a la desaparición
-                                                no sea perjudicial para la integridad del niño o adolescente.</li>
-                                            <li>el requerimiento de activación debe estar expresamente suscripto por la
-                                                autoridad judicial.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-separator"></div>
-                    <div class="panel-pane pane-texto">
-                        <div class="pane-content">
-                            <div class="">
-                                <div class="row m-y-3 text-center panels-row">
-                                    <div class="col-xs-12 col-sm-4 col-sm-offset-2 panel-body">
-                                        <p class="margin-20"><img alt="Hacé la denuncia anónima al 134"
-                                                src="https://www.argentina.gob.ar/sites/default/files/denuncias_134.svg"
-                                                style="height:40px"></p>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4">
-                                        <p class="margin-20"><img alt="Búsqueda de personas desaparecidas"
-                                                src="https://www.argentina.gob.ar/sites/default/files/sifebu.svg"
-                                                style="height:70px"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
         </section>
+
 
         <section class="bg-gray">
             <div class="container">
@@ -921,7 +570,7 @@
                                                 perdidas.</p>
                                             <p>La búsqueda permanente de Sofía Herrera, al igual que la de todas las
                                                 niñas, niños y adolescentes, nos interpela como Estado nacional a
-                                                indagar continuamente en todas aquellas herramientas que hagan posible
+                                                indagar continuamente en todas aquelllas herramientas que hagan posible
                                                 el retorno de cada niño a su hogar.</p>
                                         </div>
                                     </div>
